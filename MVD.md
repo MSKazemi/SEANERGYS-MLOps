@@ -2,11 +2,11 @@
 
 MLOps = the engineering practice that makes ML products **reproducible, automated, monitored, and continuously improved**—combining ML, DevOps, and Data Engineering across the full lifecycle (design → train → deploy → serve → monitor → retrain).
 
-# 2) Principles you must show in the MVD
+# 2) Principles we must show in the MVD
 
-The paper lists nine principles—your MVD should demonstrate at least a minimal slice of each: **CI/CD automation, workflow orchestration, reproducibility, versioning (data/model/code), collaboration, continuous training & evaluation, metadata tracking, continuous monitoring, and feedback loops**.
+MVD should demonstrate at least a minimal slice of each: **CI/CD automation, workflow orchestration, reproducibility, versioning (data/model/code), collaboration, continuous training & evaluation, metadata tracking, continuous monitoring, and feedback loops**.
 
-# 3) Components you must include (minimal versions)
+# 3) Components we must include (minimal versions)
 
 Map MVD to the canonical components (C1–C9) so reviewers see 1:1 alignment:
 
@@ -20,7 +20,7 @@ Map MVD to the canonical components (C1–C9) so reviewers see 1:1 alignment:
 - **C8 Serving**: Containerized FastAPI with `/predict`.
 - **C9 Monitoring**: `/metrics` (Prometheus format) + basic dashboard.
 
-# 4) Minimal pipeline you can implement now
+# 4) Minimal pipeline we can implement now
 
 **Stages:** `lint → unit → train → evaluate(gate) → package(container) → deploy(manual) → smoke`
 
@@ -41,7 +41,7 @@ Map MVD to the canonical components (C1–C9) so reviewers see 1:1 alignment:
 
 # Scale it up
 
-- Swap the toy model with your **RUAD/GNN** training script.
+- Swap the toy model with **RUAD/GNN** training script.
 - Move dataset tracking to **DVC** (remote on S3/MinIO/HS object store).
 - Add **MLflow tracking** and promote models through a **registry**.
-- Replace `deploy` with **Helm** and add an **HPA** and **vLLM** service if you include the ExaAgent.
+- Replace `deploy` with **Helm** and add an **HPA** and **vLLM** service if we include the ExaAgent.
