@@ -11,7 +11,46 @@ In **SEANERGYS**, MLOps underpins the **AIDAS Model Zoo** and ensures:
 - Version control for datasets and models.  
 - Continuous retraining and monitoring.  
 - Integration with the CI/CD (WP5) system.
+---
+```mermaid
+flowchart TB
 
+%% ====== TOP ROW: Data Prep ======
+subgraph DataPrep[Data prep]
+direction LR
+DI[Data ingestion] --> DA[Data analysis] --> DT[Data transformation] --> DV[Data validation] --> CTD[Create training data]
+end
+
+%% ====== MIDDLE ROW: Model Development ======
+subgraph ModelDev[Model development & training]
+direction LR
+MT[Model training] --> MV[Model validation] --> TS[Training at scale]
+end
+
+%% ====== BOTTOM ROW: Deployment ======
+subgraph Deploy[Deployment & monitoring]
+direction LR
+DEP[Deployment] --> SERV[Serving] --> MON[Monitoring] --> LOG[Logging]
+end
+
+%% ====== CONNECTIONS BETWEEN LEVELS ======
+CTD --> MT
+TS --> DEP
+style DI fill:#00cc44,stroke:#009933,stroke-width:2px,color:#fff
+style DA fill:#00cc44,stroke:#009933,stroke-width:2px,color:#fff
+style DT fill:#00cc44,stroke:#009933,stroke-width:2px,color:#fff
+style DV fill:#00cc44,stroke:#009933,stroke-width:2px,color:#fff
+style CTD fill:#00cc44,stroke:#009933,stroke-width:2px,color:#fff
+
+style MT fill:#cc33ff,stroke:#800080,stroke-width:2px,color:#fff
+style MV fill:#cc33ff,stroke:#800080,stroke-width:2px,color:#fff
+style TS fill:#ff9933,stroke:#cc6600,stroke-width:2px,color:#fff
+
+style DEP fill:#33ccff,stroke:#0099cc,stroke-width:2px,color:#fff
+style SERV fill:#33ccff,stroke:#0099cc,stroke-width:2px,color:#fff
+style MON fill:#33ccff,stroke:#0099cc,stroke-width:2px,color:#fff
+style LOG fill:#33ccff,stroke:#0099cc,stroke-width:2px,color:#ff
+```
 ---
 
 ## 🧩 2. Core Components of MLOps
