@@ -117,3 +117,59 @@ A **functional but lightweight MLOps setup** — ideal for **WP3 (AIDAS)** and *
 | **Containerization** | Build deployable images | Docker / Podman |
 | **Deployment** | Serve models as APIs | FastAPI / Flask containers |
 | **Monitoring** | Logs + metrics dashboards | Prometheus + Grafana |
+
+---
+## 🧠 6. In SEANERGYS Context (UniBO Perspective)
+
+Minimum required deliverables and components for UniBO:
+
+1. **GitLab-based pipeline** with ML stages:
+    - `data_prep`, `train`, `validate`, `package`, `deploy`, `monitor`
+2. **Model Zoo** connected to the CI/CD artifact registry (versioned models)
+3. **MLflow or equivalent** for tracking experiments
+4. **Prometheus metrics exporter** for deployed models
+5. **Container-based deployment templates** for HPC (Singularity/Apptainer or Docker)
+6. **Basic dashboards** for performance + energy KPIs
+7. **Documented workflow** for retraining and revalidation (→ D3.1 and D3.3)
+
+---
++----------------------------------------------------------------------------------------------+
+|                                        WP2 - CMI                                             |
+|                      Telemetry (jobs, nodes, facility) -> unified formats/APIs               |
++----------------------------------------------------------------------------------------------+
+                                            |
+                                            |  (Ingest / Day0 & cross-site datasets)
+                                            v
++----------------------------------------------------------------------------------------------+
+|                         WP3 - AIDAS (Model Zoo + AI Production)                              |
+|                                                                                              |
+|  [Data & Features]      [Training]                    [Evaluation]         [Registry / Zoo]  |
+|  - DVC & schema checks  - CPU/GPU train scripts       - Metrics & drift    -MLflow registry  |
+|  - Sample sets & splits - Repro seeds, HP search      - Cost/benefit       -Artifacts/weights|
+|  - Day0 & cross-site    - (FL/TL later)               - Bake-off criteria  - Model cards/IDs |
+|                                                                                              |
+|  [Serving & Monitoring/Feedback]                                                             |
+|  - FastAPI/TorchServe/LLM endpoints -> Prometheus/Grafana + user dashboards + bake-off fbk   |
++----------------------------------------------------------------------------------------------+
+              ^                                    |
+              |                                    | models + reports (tagged)
+              |                                    v
++----------------------------------------------------------------------------------------------+
+|                                WP5 - CI/CD & QA                                              |
+|  GitLab: code, issues, runners, artifacts; end-to-end traceability                           |
+|  Pipelines: lint -> unit -> train -> eval -> package -> deploy -> smoke                      |
+|  Verification suite & tests (functional, performance, energy)                                |
++----------------------------------------------------------------------------------------------+
+                                            |
+                                            | deployment bundles (containers/Helm)
+                                            v
++----------------------------------------------------------------------------------------------+
+|                           WP6 - Hosting Sites (deployment)                                   |
+|  Staged rollout on HS test/prod systems; acceptance tests; best-practice guide               |
++----------------------------------------------------------------------------------------------+
+
+---
+
+
+
+
