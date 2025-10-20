@@ -133,6 +133,7 @@ Minimum required deliverables and components for UniBO:
 7. **Documented workflow** for retraining and revalidation (→ D3.1 and D3.3)
 
 ---
+```text
 +----------------------------------------------------------------------------------------------+
 |                                        WP2 - CMI                                             |
 |                      Telemetry (jobs, nodes, facility) -> unified formats/APIs               |
@@ -167,6 +168,7 @@ Minimum required deliverables and components for UniBO:
 |                           WP6 - Hosting Sites (deployment)                                   |
 |  Staged rollout on HS test/prod systems; acceptance tests; best-practice guide               |
 +----------------------------------------------------------------------------------------------+
+```
 
 ---
 
