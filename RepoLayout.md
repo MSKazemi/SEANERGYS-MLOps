@@ -23,7 +23,7 @@ mlops-mvd/
 
 ---
 
-# Minimal code you can drop in
+# Minimal code
 
 **requirements.txt**
 
@@ -211,7 +211,7 @@ deploy:
     - echo "Deploy step placeholder (Helm/K8s/VM). For MVD, we only echo."
   environment:
     name: review/$CI_COMMIT_REF_NAME
-    url: http://example.invalid   # replace when you wire K8s ingress
+    url: http://example.invalid   # replace when our wire K8s ingress
   rules: [ { when: manual } ]     # manual for MVD
 
 smoke:
@@ -224,7 +224,7 @@ smoke:
 
 ```
 
-> For now deploy and smoke are placeholders. When you’re ready, swap in a Helm job that applies a Deployment + Service and then curl POST /predict.
+> For now deploy and smoke are placeholders. When we are ready, swap in a Helm job that applies a Deployment + Service and then curl POST /predict.
 > 
 
 ---
