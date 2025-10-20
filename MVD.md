@@ -38,3 +38,10 @@ Map MVD to the canonical components (C1–C9) so reviewers see 1:1 alignment:
 - Deployed container exposes **/predict** and **/metrics**; Prometheus scrapes metrics.
 - Run metadata (params + metrics) stored (file or MLflow).
 - Short **Model Card** describing data, metrics, and risks.
+
+# Scale it up
+
+- Swap the toy model with your **RUAD/GNN** training script.
+- Move dataset tracking to **DVC** (remote on S3/MinIO/HS object store).
+- Add **MLflow tracking** and promote models through a **registry**.
+- Replace `deploy` with **Helm** and add an **HPA** and **vLLM** service if you include the ExaAgent.
