@@ -60,7 +60,7 @@ style LOG fill:#33ccff,stroke:#0099cc,stroke-width:2px,color:#ff
 | **1️⃣ Data & Feature Layer** | **Data Versioning** | Track dataset versions, metadata, schema evolution | DVC, Git-LFS, Delta Lake |
 |  | **Data Validation** | Check data quality, drift, missing values | Great Expectations, TFDV |
 | **2️⃣ Model Layer** | **Experiment Tracking** | Record hyperparameters, metrics, and artifacts | MLflow |
-|  | **Model Registry / Zoo** | Store and version trained models; approval workflow | MLflow Registry, GitLab Packages |
+|  | **Model Registry** | Store and version trained models; approval workflow | MLflow Registry, GitLab Packages |
 | **3️⃣ Pipeline Layer** | **Training Pipelines** | Automated scripts for training and evaluation | Kubeflow, Airflow, GitLab CI |
 |  | **Testing / Validation** | Unit, integration, performance, fairness, and energy tests | Pytest, tox, custom scripts |
 | **4️⃣ Deployment Layer** | **Serving & Inference** | Package model in container and deploy to API/service | Docker, FastAPI, TorchServe |
